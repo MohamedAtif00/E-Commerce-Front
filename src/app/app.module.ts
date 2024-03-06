@@ -10,6 +10,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { NavbarComponent } from './header/navbar/navbar.component';
 import { SearchComponent } from './header/search/search.component';
+import { CarouselComponent } from './home/carousel/carousel.component';
+import { ListCarouselComponent } from './home/list-carousel/list-carousel.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { SearchComponent } from './header/search/search.component';
     ProductDetailsComponent,
     ShoppingCartComponent,
     NavbarComponent,
-    SearchComponent
+    SearchComponent,
+    CarouselComponent,
+    ListCarouselComponent
   ],
   imports: [
     BrowserModule,

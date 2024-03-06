@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SearchService } from 'src/app/Shared/Search/search.service';
 
 @Component({
   selector: 'app-search',
@@ -7,4 +8,26 @@ import { Component } from '@angular/core';
 })
 export class SearchComponent {
 
+
+  constructor(private search:SearchService){}
+
+  SearchActivated()
+  {
+   this.search.SearchActivated(true);
+  }
+
+  SearchDeactivated()
+  {
+    this.search.SearchActivated(false);
+    
+  }
+
+  changed(event:Event)
+  {
+    const inputValue = (event.target as HTMLInputElement).value;
+    // Filter out non-letter characters using a regular expression
+    //this.enteredLetters = inputValue.replace(/[^a-zA-Z]/g, '');
+    console.log(inputValue); // Print the entered letters to the console
+    
+  }
 }

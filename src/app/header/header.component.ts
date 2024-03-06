@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+
+
+  constructor(private render:Renderer2,private el:ElementRef){}
+
+  addstyel()
+  {
+    const nativeElement = this.el.nativeElement;
+
+    
+  }
 
 }

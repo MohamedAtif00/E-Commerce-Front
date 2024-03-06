@@ -1,5 +1,11 @@
-<div class="container-fluid">
+<div class="container-fluid position-relative">
   <app-header>
-    <app-navbar></app-navbar>
+    <app-navbar ></app-navbar>
   </app-header>
+  <div class=" position-absolute z-3" [ngClass]="searchActive?'search-active':''">
+  </div>
+    <app-home class="container-fluid justify-content-center ">
+      <app-carousel class="container-fluid  "></app-carousel>
+      <app-list-carousel class="container-fluid row justify-content-center "></app-list-carousel>
+    </app-home>
 </div>
