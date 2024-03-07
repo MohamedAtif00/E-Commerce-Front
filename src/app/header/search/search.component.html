@@ -1,7 +1,7 @@
-<form action="" class="col-6 col-sm-12">
+<form action="" class=" col-md-12">
     <div class="p-1 bg-light rounded rounded-pill shadow-sm ">
         <div class="input-group" style="margin-left:10px;">
-          <input type="search" placeholder="What're you searching for?" (input)="changed($event)" (focus)="SearchActivated()"  (blur)="SearchDeactivated()" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+          <input type="search" placeholder="What're you searching for?" list="datalistOptions" (input)="changed($event)" (focus)="SearchActivated()"  (blur)="SearchDeactivated()" aria-describedby="button-addon1" class="form-control border-0 bg-light">
           <div class="input-group-append">
             <button id="button-addon1"  class="btn btn-link text-danger"><img src="../../../assets/search_480px.png" width="25px" height="25px" alt=""></button>
           </div>

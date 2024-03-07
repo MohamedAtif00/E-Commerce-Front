@@ -10,24 +10,28 @@
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Categories</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-      <div class="offcanvas-body ps-3" style="overflow: visible;">
-        <ul class="navbar-nav justify-content-end   w-100">
+      <div class="offcanvas-body p-0" style="overflow: visible;">
+        <ul class="navbar-nav row w-100 ps-5">
           <!----------------------------------------->
-          <li class="nav-item dropend w-100">
-            <div class="btn-group dropend row w-100 ">
-              <button type="button" class="btn btn-secondary col-11 bg-transparent border border-light">
-                Split dropend
-              </button>
-              <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split col-1 bg-transparent text-danger fs-4 border border-light"  data-bs-toggle="dropdown" aria-expanded="false">
-                <span class="visually-hidden">Toggle Dropend</span>
-              </button>
-              <ul class="dropdown-menu position-absolute ms-4">
-                <li><span class="dropdown-item-text">Dropdown item text</span></li>
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li class="nav-item col-12 dropend w-100 pe-0">
+            <div class="btn-group col-12 dropend position-relative">
+              <div type="button" (click)="dropendClicked()"  class="btn btn-light col-12 row">
+                <div class="col-7 d-inline"> Split dropend </div>
+                <div class="col-1 float-end" > <i class="bi bi-caret-right"></i></div>
+              </div>
+              <ul class="dropdown-menu position-absolute col-12 ms-2" [ngClass]="isPopperStatic ? 'show':null" [attr.data-bs-popper]="isPopperStatic ? 'static' : null">
+                <div class="list-group">
+                  <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
+                    The current button
+                  </button>
+                  <button type="button" class="list-group-item list-group-item-action">A second button item</button>
+                  <button type="button" class="list-group-item list-group-item-action">A third button item</button>
+                  <button type="button" class="list-group-item list-group-item-action">A fourth button item</button>
+                  <button type="button" class="list-group-item list-group-item-action" disabled>A disabled button item</button>
+                </div>
               </ul>
             </div>
+            
           </li>
           
           <li class="nav-item">
@@ -47,10 +51,6 @@
             </ul>
           </li>
         </ul>
-        <form class="d-flex mt-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
 
     </div>

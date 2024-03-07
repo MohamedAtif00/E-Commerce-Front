@@ -1,14 +1,14 @@
-.cards-wrapper {
-    display: flex;
-    justify-content: center;
+.carousel-control-next:hover{
+  background-color:rgba(255,255,255,0.4);
+}
+.carousel-control-prev:hover{
+  background-color:rgba(255,255,255,0.4);
+}
+  img{
+    width:32.3%;
+      height:270px;
+    padding-right:10px;
   }
-  .card{
-    max-width:300px;
-  }
-  .card img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-  .carousel-control-prev-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3e%3cpath d='M6.25 0l-4 4 4 4v-3h2v-2h-2v-3z'/%3e%3c/svg%3e");
+  .carousel-item{
+      height: 280px;
   }

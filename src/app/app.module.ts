@@ -12,6 +12,7 @@ import { NavbarComponent } from './header/navbar/navbar.component';
 import { SearchComponent } from './header/search/search.component';
 import { CarouselComponent } from './home/carousel/carousel.component';
 import { ListCarouselComponent } from './home/list-carousel/list-carousel.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ListCarouselComponent } from './home/list-carousel/list-carousel.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
