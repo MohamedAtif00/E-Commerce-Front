@@ -1,58 +1,132 @@
 <ng-content select="app-navbar"></ng-content>
-<nav class="navbar  " style="background-color: #232f3e;">
-  <div class="container-fluid">
-    <button class="navbar-toggler" style="background-color: antiquewhite;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+<nav class="navbar  pt-0 pb-0 " style="background-color: #232f3e;height: 40px;">
+  <div class="container-fluid pt-0 row">
+    <button class="navbar-toggler bg-transparent col-1  mt-0 pt-0" style="background-color: antiquewhite; height: 35px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <div class="w-50 box-light float-end align-items-center ">
+        <i class="bi bi-list fs-4 text-light"></i><span class="text-light mb-2 fs-5 mb-2" >All</span>
+      </div>
     </button>
-
-    <div class="offcanvas offcanvas-start "  tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Categories</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body p-0" style="overflow: visible;">
-        <ul class="navbar-nav row w-100 ps-5">
-          <!----------------------------------------->
-          <li class="nav-item col-12 dropend w-100 pe-0">
-            <div class="btn-group col-12 dropend position-relative">
-              <div type="button" (click)="dropendClicked()"  class="btn btn-light col-12 row">
-                <div class="col-7 d-inline"> Split dropend </div>
-                <div class="col-1 float-end" > <i class="bi bi-caret-right"></i></div>
-              </div>
-              <ul class="dropdown-menu position-absolute col-12 ms-2" [ngClass]="isPopperStatic ? 'show':null" [attr.data-bs-popper]="isPopperStatic ? 'static' : null">
-                <div class="list-group">
-                  <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
-                    The current button
+    <div class="offcanvas offcanvas-start  overflow-hidden"  tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="d-flex flex-nowrap  flex-row position-relative " style="width: 800px;">
+        <div class="row " style="width: 50%;">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Categories</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body p-0 " style="overflow: visible;">
+            <ul class="navbar-nav row w-100 ps-5">
+              <!----------------------------------------->
+              <li class="nav-item col-12 dropend w-100 pe-0 mb-4">
+                <div class="btn-group dropend col-12 ">
+                  <button type="button" class="btn btn-light col-11 fs-5" data-bs-toggle="dropdown" aria-expanded="false">
+                    Split dropend
                   </button>
-                  <button type="button" class="list-group-item list-group-item-action">A second button item</button>
-                  <button type="button" class="list-group-item list-group-item-action">A third button item</button>
-                  <button type="button" class="list-group-item list-group-item-action">A fourth button item</button>
-                  <button type="button" class="list-group-item list-group-item-action" disabled>A disabled button item</button>
-                </div>
-              </ul>
-            </div>
-            
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
+                  <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split col-1 fs-5" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropend</span>
+                  </button>
+                  <ul class="dropdown-menu position-absolute w-100">
+                    <div class="list-group">
+                      <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
+                        The current button
+                      </button>
+                      <button type="button" class="list-group-item list-group-item-action">A second button item</button>
+                      <button type="button" class="list-group-item list-group-item-action">A third button item</button>
+                      <button type="button" class="list-group-item list-group-item-action">A fourth button item</button>
+                      <button type="button" class="list-group-item list-group-item-action" disabled>A disabled button item</button>
+                    </div>
+                  </ul>
+                </div>       
               </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-        </ul>
+              <li class="nav-item col-12 dropend w-100 pe-0 mb-4">
+                <div class="btn-group dropend col-12 ">
+                  <button type="button" class="btn btn-light col-11 fs-5" data-bs-toggle="dropdown" aria-expanded="false">
+                    Split dropend
+                  </button>
+                  <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split col-1 fs-5" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropend</span>
+                  </button>
+                  <ul class="dropdown-menu position-absolute w-100">
+                    <div class="list-group">
+                      <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
+                        The current button
+                      </button>
+                      <button type="button" class="list-group-item list-group-item-action">A second button item</button>
+                      <button type="button" class="list-group-item list-group-item-action">A third button item</button>
+                      <button type="button" class="list-group-item list-group-item-action">A fourth button item</button>
+                      <button type="button" class="list-group-item list-group-item-action" disabled>A disabled button item</button>
+                    </div>
+                  </ul>
+                </div>      
+              </li>
+              <li class="nav-item col-12 dropend w-100 pe-0 mb-4">
+                <div class="btn-group dropend col-12 ">
+                  <button type="button" class="btn btn-light col-11 fs-5" data-bs-toggle="dropdown" aria-expanded="false">
+                    Split dropend
+                  </button>
+                  <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split col-1 fs-5" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropend</span>
+                  </button>
+                  <ul class="dropdown-menu position-absolute w-100">
+                    <div class="list-group">
+                      <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
+                        The current button
+                      </button>
+                      <button type="button" class="list-group-item list-group-item-action">A second button item</button>
+                      <button type="button" class="list-group-item list-group-item-action">A third button item</button>
+                      <button type="button" class="list-group-item list-group-item-action">A fourth button item</button>
+                      <button type="button" class="list-group-item list-group-item-action" disabled>A disabled button item</button>
+                    </div>
+                  </ul>
+                </div>    
+              </li>
+              <li class="nav-item col-12 dropend w-100 pe-0 mb-4">
+                <div class="btn-group dropend col-12 ">
+                  <button type="button" class="btn btn-light col-11 fs-5" data-bs-toggle="dropdown" aria-expanded="false">
+                    Split dropend
+                  </button>
+                  <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split col-1 fs-5" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropend</span>
+                  </button>
+                  <ul class="dropdown-menu position-absolute w-100">
+                    <div class="list-group">
+                      <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
+                        The current button
+                      </button>
+                      <button type="button" class="list-group-item list-group-item-action">A second button item</button>
+                      <button type="button" class="list-group-item list-group-item-action">A third button item</button>
+                      <button type="button" class="list-group-item list-group-item-action">A fourth button item</button>
+                      <button type="button" class="list-group-item list-group-item-action" disabled>A disabled button item</button>
+                    </div>
+                  </ul>
+                </div>
+                
+              </li>
+              
+              
+            </ul>        
+          </div>
+        </div>
+        <div class="row px-3" style="width: 50%;">
+          <div class="row px-3">
+            Hello
+          </div>
+        </div>
+
       </div>
 
+    </div>
+    <div class="col-11">
+      <ul class="navbar-nav  d-flex flex-row mb-2 mb-lg-0  justify-content-start ">
+        <li class="nav-item me-5 px-2 py-0  box-light ">
+          <a class="nav-link text-light px-0 " role="button">Today's Deals</a>
+        </li>
+        <li class="nav-item me-5 px-2 py-0  box-light ">
+          <a class="nav-link text-light" href="#">Features</a>
+        </li>
+        <li class="nav-item me-5 px-2 py-0  box-light ">
+          <a class="nav-link text-light" href="#">Pricing</a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>

@@ -1,10 +1,13 @@
-<div class="container-fluid position-relative p-0">
-  <app-header>
-    <app-navbar ></app-navbar>
-  </app-header>
-  <div class=" position-absolute z-3" [ngClass]="searchActive?'search-active':''">
+<div class="container-fluid position-relative d-flex flex-column   p-0">
+  <div class="">
+    <app-header>
+      <app-navbar ></app-navbar>
+    </app-header>
+    <div class=" position-absolute z-3" [ngClass]="searchActive?'search-active':''">
+    </div>
+
   </div>
-    <app-home class="container-fluid justify-content-center ">
+    <app-home class="container-fluid justify-content-center pt-0 ">
       <app-carousel class="container-fluid  "></app-carousel>
       <app-list-carousel class="container-fluid row justify-content-center "></app-list-carousel>
     </app-home>

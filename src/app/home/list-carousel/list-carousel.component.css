@@ -5,10 +5,34 @@
   background-color:rgba(255,255,255,0.4);
 }
   img{
-    width:32.3%;
-      height:270px;
-    padding-right:10px;
+    width:278px;
+    max-height:220px;
   }
   .carousel-item{
-      height: 280px;
+      max-height: 210px;
   }
+//------------------------
+#next{
+  width: 100px;
+  height: 50%;
+  top: 20%;
+}
+
+
+
+#first-row{
+  transition:transform 1s ease;
+}
+#second-row{
+  transition:transform 1s ease;
+}
+#third-row{
+  transition:transform 1s ease;
+}
+
+.slidee{
+  padding:0;
+  margin-right:10px;
+  transition:transform 1s ease;
+  overflow:hidden;
+}

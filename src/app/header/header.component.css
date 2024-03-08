@@ -1,0 +1,9 @@
+*{
+    box-sizing:border-box;
+}
+.box-light{
+    border:1px solid transparent
+}
+.box-light:hover{
+    border:1px solid white;
+}

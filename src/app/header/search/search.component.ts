@@ -9,7 +9,7 @@ import { SearchService } from 'src/app/Shared/Search/search.service';
 export class SearchComponent {
 
 
-  constructor(private search:SearchService){}
+  constructor(public search:SearchService){}
 
   SearchActivated()
   {

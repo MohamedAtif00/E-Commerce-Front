@@ -5,12 +5,13 @@ import { EventEmitter, Injectable } from '@angular/core';
 })
 export class SearchService {
 
-
+  isSearchActive:boolean = false;
   searchActive = new EventEmitter<boolean>();
   constructor() { }
 
   SearchActivated(value:boolean)
   {
+    this.isSearchActive= value;
     this.searchActive.emit(value);
   }
 }
