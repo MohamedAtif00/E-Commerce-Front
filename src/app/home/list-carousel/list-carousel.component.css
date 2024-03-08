@@ -30,7 +30,7 @@
   transition:transform 1s ease;
 }
 
-.slidee{
+[class*="slidee"]{
   padding:0;
   margin-right:10px;
   transition:transform 1s ease;

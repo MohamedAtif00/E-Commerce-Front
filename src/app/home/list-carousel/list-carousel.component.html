@@ -1,74 +1,37 @@
-<div class="container row justify-content-center " style="background-color: #e9ecef;">
-	
-	<div class="row justify-content-center col-10 mx-0 mb-4 px-0 border  border-5  border-white   " style="height: 300px;white-space: nowrap;background-color: white;">
+<div class="container row justify-content-center " style="background-color: #e9ecef;" >
+
+	<div class="row justify-content-center col-10 mx-0 mb-4 px-0 border  border-5  border-white"  style="height: 300px;white-space: nowrap;background-color: white;">
 		<h3 class="fw-semibold   ">Best Seller & Outdoors</h3>
-		<div class="row justify-content-center position-relative p-0 " (mouseleave)="hoverdeactive()" (mouseenter)="hoveractive()" style="height: 300px;white-space: nowrap;">
+		<div class="row justify-content-center position-relative p-0 "  (mouseleave)="hoverdeactive(0)" (mouseenter)="hoveractive(0)" style="height: 300px;white-space: nowrap;">
 			<div id="main"  class=" row  d-flex flex-row flex-nowrap p-0 position-relative overflow-hidden " >
-				<div class="slidee row align-items-center flex-nowrap justify-content-center " style="height: 250px;">
-					<img class=" col-md-10" src="https://m.media-amazon.com/images/I/71fFUd8uf3L._AC_SY200_.jpg"  alt="../../assets/pexels-monstera-production-5708969.jpg">
-					<img class="col-2 " src="https://m.media-amazon.com/images/I/51tCjmrxM5L._AC_SY200_.jpg"    alt="../../assets/pexels-monstera-production-5708969.jpg">
-					<img class="col-2 " src="https://m.media-amazon.com/images/I/51L3RwkaTBL._AC_SY200_.jpg"    alt="../../assets/pexels-monstera-production-5708969.jpg">
-					<img class="col-2 " src="https://m.media-amazon.com/images/I/71M6a8SHCeL._AC_SY200_.jpg"    alt="../../assets/pexels-monstera-production-5708969.jpg">
-					<img class="col-2 " src="https://m.media-amazon.com/images/I/81Y26toqdTL._AC_SY200_.jpg"    alt="../../assets/pexels-monstera-production-5708969.jpg">
-				</div>
-				<div class="slidee row align-items-center flex-nowrap justify-content-center " style="height: 250px;">
-					<img src="https://m.media-amazon.com/images/I/51L3RwkaTBL._AC_SY200_.jpg"    alt="../../assets/pexels-monstera-production-5708969.jpg">
-					<img src="https://m.media-amazon.com/images/I/71M6a8SHCeL._AC_SY200_.jpg"    alt="../../assets/pexels-monstera-production-5708969.jpg">
-					<img src="https://images.pexels.com/photos/5935795/pexels-photo-5935795.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"    alt="../../assets/pexels-monstera-production-5708969.jpg">
-					<img src="https://m.media-amazon.com/images/I/71M6a8SHCeL._AC_SY200_.jpg"    alt="../../assets/pexels-monstera-production-5708969.jpg">
-					<img src="https://m.media-amazon.com/images/I/81Y26toqdTL._AC_SY200_.jpg"    alt="../../assets/pexels-monstera-production-5708969.jpg">
-				</div>
-				<div class="slidee row align-items-center flex-nowrap justify-content-center " style="height: 250px;">
-					<img src="https://m.media-amazon.com/images/I/61XYX1tzoTL._AC_SY200_.jpg"   alt="../../assets/pexels-monstera-production-5708969.jpg">
-					<img src="https://m.media-amazon.com/images/I/71-P2+J2RQL._AC_SY200_.jpg"   alt="../../assets/pexels-monstera-production-5708969.jpg">
-					<img src="https://images.pexels.com/photos/3587478/pexels-photo-3587478.jpeg?auto=compress&cs=tinysrgb&w=600"   alt="../../assets/pexels-monstera-production-5708969.jpg">
-					<img src="https://m.media-amazon.com/images/I/71M6a8SHCeL._AC_SY200_.jpg"    alt="../../assets/pexels-monstera-production-5708969.jpg">
-					<img src="https://m.media-amazon.com/images/I/81Y26toqdTL._AC_SY200_.jpg"    alt="../../assets/pexels-monstera-production-5708969.jpg">
+				<div class="slidee{{0}} row align-items-center flex-nowrap justify-content-center " style="height: 250px;"  *ngFor="let items of groupsfirst">
+					<img class=" col-md-10" *ngFor="let item of items.images" [src]="item"  alt="../../assets/pexels-monstera-production-5708969.jpg">
 				</div>
 			</div>
-			<button id="next" (click)="next()" class="position-absolute  end-0 border-2  border-end-0 rounded-1 shadow" style="opacity:0;width: 75px; height: 40%;top: 20%;background-color: white;">
+			<button id="next{{0}}" (click)="next(0)" class="position-absolute  end-0 border-2  border-end-0 rounded-1 shadow" style="opacity: 0;width: 75px; height: 40%;top: 20%;background-color: white;">
 				<span class="carousel-control-next-icon  " style="color: black; background-image: url(../../../assets/chevron_right_208px.png);" aria-hidden="true"></span>
 			</button>
-			<button id="prev" (click)="prev()" class="position-absolute  start-0   border-2  border-start-0 rounded-1 shadow-sm" style="opacity:0;width: 75px;height: 40%;top: 20%;background-color: white;">
+			<button id="prev{{0}}" (click)="prev(0)" class="position-absolute  start-0   border-2  border-start-0 rounded-1 shadow-sm" style="opacity: 0; width: 75px;height: 40%;top: 20%;background-color: white;">
 				<span class="carousel-control-prev-icon " style="color: black; background-image: url(../../../assets/chevron_left_208px.png);" aria-hidden="true"></span>
 			</button>
 		</div>
 	</div>
 
-	<div class="row justify-content-center col-10 me-0 px-0 border  border-5  border-white   " style="height: 300px;white-space: nowrap;background-color: white;">
+	<div class="row justify-content-center col-10 mx-0 mb-4 px-0 border  border-5  border-white"  style="height: 300px;white-space: nowrap;background-color: white;">
 		<h3 class="fw-semibold   ">Best Seller & Outdoors</h3>
-		<div class="row justify-content-center position-relative p-0 " (mouseleave)="hoverdeactive()" (mouseenter)="hoveractive()" style="height: 300px;white-space: nowrap;">
+		<div class="row justify-content-center position-relative p-0 "  (mouseleave)="hoverdeactive(1)" (mouseenter)="hoveractive(1)" style="height: 300px;white-space: nowrap;">
 			<div id="main"  class=" row  d-flex flex-row flex-nowrap p-0 position-relative overflow-hidden " >
-				<div class="slidee row align-items-center flex-nowrap " style="height: 250px;">
-					<img class=" col-md-10" src="https://m.media-amazon.com/images/I/71fFUd8uf3L._AC_SY200_.jpg"  alt="../../assets/pexels-monstera-production-5708969.jpg">
-					<img class="col-2 " src="https://m.media-amazon.com/images/I/51tCjmrxM5L._AC_SY200_.jpg"    alt="../../assets/pexels-monstera-production-5708969.jpg">
-					<img class="col-2 " src="https://m.media-amazon.com/images/I/51L3RwkaTBL._AC_SY200_.jpg"    alt="../../assets/pexels-monstera-production-5708969.jpg">
-					<img class="col-2 " src="https://m.media-amazon.com/images/I/71M6a8SHCeL._AC_SY200_.jpg"    alt="../../assets/pexels-monstera-production-5708969.jpg">
-					<img class="col-2 " src="https://m.media-amazon.com/images/I/81Y26toqdTL._AC_SY200_.jpg"    alt="../../assets/pexels-monstera-production-5708969.jpg">
-				</div>
-				<div class="slidee">
-					<img src="https://m.media-amazon.com/images/I/51L3RwkaTBL._AC_SY200_.jpg"    alt="../../assets/pexels-monstera-production-5708969.jpg">
-					<img src="https://m.media-amazon.com/images/I/71M6a8SHCeL._AC_SY200_.jpg"    alt="../../assets/pexels-monstera-production-5708969.jpg">
-					<img src="https://images.pexels.com/photos/5935795/pexels-photo-5935795.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"    alt="../../assets/pexels-monstera-production-5708969.jpg">
-					<img src="https://m.media-amazon.com/images/I/71M6a8SHCeL._AC_SY200_.jpg"    alt="../../assets/pexels-monstera-production-5708969.jpg">
-					<img src="https://m.media-amazon.com/images/I/81Y26toqdTL._AC_SY200_.jpg"    alt="../../assets/pexels-monstera-production-5708969.jpg">
-				</div>
-				<div class="slidee">
-					<img src="https://m.media-amazon.com/images/I/61XYX1tzoTL._AC_SY200_.jpg"   alt="../../assets/pexels-monstera-production-5708969.jpg">
-					<img src="https://m.media-amazon.com/images/I/71-P2+J2RQL._AC_SY200_.jpg"   alt="../../assets/pexels-monstera-production-5708969.jpg">
-					<img src="https://images.pexels.com/photos/3587478/pexels-photo-3587478.jpeg?auto=compress&cs=tinysrgb&w=600"   alt="../../assets/pexels-monstera-production-5708969.jpg">
-					<img src="https://m.media-amazon.com/images/I/71M6a8SHCeL._AC_SY200_.jpg"    alt="../../assets/pexels-monstera-production-5708969.jpg">
-					<img src="https://m.media-amazon.com/images/I/81Y26toqdTL._AC_SY200_.jpg"    alt="../../assets/pexels-monstera-production-5708969.jpg">
+				<div class="slidee{{1}} row align-items-center flex-nowrap justify-content-center " style="height: 250px;"  *ngFor="let items of groupsfirst">
+					<img class=" col-md-10" *ngFor="let item of items.images" [src]="item"  alt="../../assets/pexels-monstera-production-5708969.jpg">
 				</div>
 			</div>
-			<button id="next2" (click)="next()" class="position-absolute  end-0  border-2 rounded-3 shadow-sm" style="opacity:0;width: 75px; height: 40%;top: 20%;background-color: white;">
+			<button id="next{{1}}" (click)="next(1)" class="position-absolute  end-0 border-2  border-end-0 rounded-1 shadow" style="opacity: 0;width: 75px; height: 40%;top: 20%;background-color: white;">
 				<span class="carousel-control-next-icon  " style="color: black; background-image: url(../../../assets/chevron_right_208px.png);" aria-hidden="true"></span>
 			</button>
-			<button id="prev2" (click)="prev()" class="position-absolute  start-0   border-0 " style="opacity:0;width: 75px;height: 40%;top: 20%;background-color: white;">
+			<button id="prev{{1}}" (click)="prev(1)" class="position-absolute  start-0   border-2  border-start-0 rounded-1 shadow-sm" style="opacity: 0; width: 75px;height: 40%;top: 20%;background-color: white;">
 				<span class="carousel-control-prev-icon " style="color: black; background-image: url(../../../assets/chevron_left_208px.png);" aria-hidden="true"></span>
 			</button>
 		</div>
 	</div>
-
 
 </div>	

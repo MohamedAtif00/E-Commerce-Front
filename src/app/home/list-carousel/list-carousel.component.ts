@@ -1,5 +1,13 @@
-import { trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { animate, style, transition, trigger } from '@angular/animations';
+import { Component, ElementRef, OnInit } from '@angular/core';
+
+interface GroupImgs {
+  images: string[];
+}
+
+interface GroupBooks{
+  books:string[]
+}
 
 @Component({
   selector: 'app-list-carousel',
@@ -7,10 +15,58 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-carousel.component.css']
   
 })
-export class ListCarouselComponent {
+export class ListCarouselComponent implements OnInit{
 
-  show:number = 0;
+  show1:number = 0;
+  show2:number = 0;
+  show3:number = 0;
+  isHovered: boolean = false;
 
+  imgs:Array<string> = [
+    'https://m.media-amazon.com/images/I/71fFUd8uf3L._AC_SY200_.jpg',
+    'https://m.media-amazon.com/images/I/51tCjmrxM5L._AC_SY200_.jpg',
+    'https://m.media-amazon.com/images/I/51L3RwkaTBL._AC_SY200_.jpg',
+    'https://m.media-amazon.com/images/I/71M6a8SHCeL._AC_SY200_.jpg',
+    'https://m.media-amazon.com/images/I/81Y26toqdTL._AC_SY200_.jpg',
+    'https://m.media-amazon.com/images/I/51L3RwkaTBL._AC_SY200_.jpg',
+    'https://m.media-amazon.com/images/I/71M6a8SHCeL._AC_SY200_.jpg',
+    'https://m.media-amazon.com/images/I/71M6a8SHCeL._AC_SY200_.jpg',
+    'https://m.media-amazon.com/images/I/81Y26toqdTL._AC_SY200_.jpg',
+    'https://m.media-amazon.com/images/I/71wm42EtoNL._AC_SY200_.jpg',
+    'https://m.media-amazon.com/images/I/61DBs1mMg2L._AC_SY200_.jpg',
+    'https://m.media-amazon.com/images/I/619KSituLdL._AC_SY200_.jpg',
+    'https://m.media-amazon.com/images/I/619KSituLdL._AC_SY200_.jpg'
+  ]
+
+  books:Array<string> = [
+    'https://m.media-amazon.com/images/I/41yi4TVWREL._AC_SY200_.jpg',
+    'https://m.media-amazon.com/images/I/41sKk71L1-L._AC_SY200_.jpg',
+    'https://m.media-amazon.com/images/I/51BGYkauCXL._AC_SY200_.jpg',
+    'https://m.media-amazon.com/images/I/412w3Q+sS+L._AC_SY200_.jpg',
+    'https://m.media-amazon.com/images/I/51MlsPdl6dL._AC_SY200_.jpg',
+    'https://m.media-amazon.com/images/I/515Mh-4qzGL._AC_SY200_.jpg'
+  ]
+
+
+  groupsfirst!:GroupImgs[];
+  groupbooks!:GroupBooks[];
+  ngOnInit(): void {
+    this.groupsfirst =  this.splitIntoGroups(this.imgs);
+    console.log(this.groupsfirst);
+    
+
+  }
+
+  splitIntoGroups(images: string[]): GroupImgs[] {
+    const groups: GroupImgs[] = [];
+  
+    for (let i = 0; i < images.length; i += 4) {
+      const groupImages = images.slice(i, i + 5);
+      groups.push({ images: groupImages });
+    }
+  
+    return groups;
+  }
   
   clicked()
   {
@@ -32,65 +88,78 @@ export class ListCarouselComponent {
   }
   
 
-  next()
+  next(i:number)
   {
-    
-    let element = document.getElementsByClassName('slidee');
-    if(!(this.show < -100) ) {
+    let show= 0;
+    if(i == 0 ) show = this.show1;
+    if(i == 1 ) show = this.show2;
+    let element = document.getElementsByClassName('slidee'+i);
+    if(!(show < -100) ) {
       
-      console.log(this.show);
+      console.log(show);
       
-        this.show-= 100;
+        show-= 100;
         let elements = Array.from(element);
         elements.forEach((e)=>{
           let myelement = e as HTMLElement;
-          myelement.style.transform = `translateX(${this.show}%)`;
+          myelement.style.transform = `translateX(${show}%)`;
           
         });
-
+        if(i == 0 ) this.show1 = show;
+        if(i == 1 ) this.show2 = show;
     }
 
     
 
   }
 
-  prev()
+  prev(i:number)
   {
-    if((this.show != 0) ) {
-    {
-      let element = document.getElementsByClassName('slidee');
-      let elements = Array.from(element);
-      this.show+= 100
+    let show= 0;
+    if(i == 0 ) show = this.show1;
+    if(i == 1 ) show = this.show2;
+    let element = document.getElementsByClassName('slidee'+i);
+    if((show != 0) ) {
       
-      elements.forEach((e)=>{
-        let myelement = e as HTMLElement;
-        myelement.style.transform = `translateX(${this.show}%)`;
-        
+      console.log(show);
+      
+        show+= 100;
+        let elements = Array.from(element);
+        elements.forEach((e)=>{
+          let myelement = e as HTMLElement;
+          myelement.style.transform = `translateX(${show}%)`;
+          
         });
-
-      }
-    }else{
-      this.show = 0;
+        if(i == 0 ) this.show1 = show;
+        if(i == 1 ) this.show2 = show;
     }
+
   }
 
-  hoverdeactive(){
-    let next = document.getElementById('next') as HTMLElement;
-    let prev = document.getElementById('prev') as HTMLElement;
+  hoverdeactive(i:number){
+    
+    let next = document.getElementById('next'+i) as HTMLElement;
+    let prev = document.getElementById('prev'+i) as HTMLElement;
     next.style.transition = 'opacity 0.5s ease 0.5s'
     prev.style.transition = 'opacity 0.5s ease 0.5s'
     if(next.style.opacity != '0') next.style.opacity = '0';
     if(prev.style.opacity != '0') prev.style.opacity = '0';
   }
 
-  hoveractive()
+  hoveractive(i:number)
   {
-    let next = document.getElementById('next') as HTMLElement;
-    let prev = document.getElementById('prev') as HTMLElement;
+    let next = document.getElementById('next'+i) as HTMLElement;
+    let prev = document.getElementById('prev'+i) as HTMLElement;
     next.style.transition = 'opacity 0.5s ease 0.5'
     prev.style.transition = 'opacity 0.5s ease 0.5'
     if(next.style.opacity != '1') next.style.opacity = '1';
     if(prev.style.opacity != '1') prev.style.opacity = '1';
+  }
+
+
+  countArray(n:number)
+  {
+    return Array(n);
   }
 
 }
