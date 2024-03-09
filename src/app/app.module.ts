@@ -13,6 +13,7 @@ import { SearchComponent } from './header/search/search.component';
 import { CarouselComponent } from './home/carousel/carousel.component';
 import { ListCarouselComponent } from './home/list-carousel/list-carousel.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BookService } from './Shared/book/book.service';
 
 @NgModule({
   declarations: [
@@ -30,9 +31,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
   ],
-  providers: [],
+  providers: [BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

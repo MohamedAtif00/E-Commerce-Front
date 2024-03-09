@@ -55,4 +55,8 @@ export class HeaderComponent implements AfterViewInit,OnDestroy {
     menu.style.transform = 'translatex(-50%)'
   }
 
+  countArray(n:number)
+  {
+    return Array(n);
+  }
 }

@@ -5,10 +5,11 @@
     </app-header>
     <div class=" position-absolute z-3" [ngClass]="searchActive?'search-active':''">
     </div>
-
+    
   </div>
-    <app-home class="container-fluid justify-content-center pt-0 ">
+    <!-- <app-home class="container-fluid justify-content-center pt-0 ">
       <app-carousel class="container-fluid  "></app-carousel>
       <app-list-carousel class="container-fluid row justify-content-center "></app-list-carousel>
-    </app-home>
+    </app-home> -->
+    <router-outlet></router-outlet>
 </div>

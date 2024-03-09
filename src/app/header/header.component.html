@@ -1,6 +1,6 @@
 <ng-content select="app-navbar"></ng-content>
 <nav class="navbar  pt-0 pb-0 " style="background-color: #232f3e;height: 40px;">
-  <div class="container-fluid pt-0 row">
+  <div class="container-fluid pt-0 row" style="min-width: 1920px;">
     <button class="navbar-toggler bg-transparent col-1  mt-0 pt-0" style="background-color: antiquewhite; height: 35px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <div class="w-50 box-light float-end align-items-center ">
         <i class="bi bi-list fs-4 text-light"></i><span class="text-light mb-2 fs-5 mb-2" >All</span>
@@ -56,11 +56,7 @@
             <hr>
             <div class="d-flex flex-column gap-4 mt-2  ">
               <h5 class="fw-bolder fs-4 ">Category</h5> 
-              <h5>Category</h5> 
-              <h5>Category</h5> 
-              <h5>Category</h5> 
-              <h5>Category</h5> 
-              <h5>Category</h5> 
+              <h5 *ngFor="let item of countArray(5)" [routerLink]="'productlist'">Category</h5> 
             </div>
           </div>
           
