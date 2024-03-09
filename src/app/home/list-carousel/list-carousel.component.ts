@@ -51,13 +51,15 @@ export class ListCarouselComponent implements OnInit{
   groupsfirst!:GroupImgs[];
   groupbooks!:GroupBooks[];
   ngOnInit(): void {
-    this.groupsfirst =  this.splitIntoGroups(this.imgs);
+    this.groupsfirst =  this.splitIntoGroupsofImages(this.imgs);
     console.log(this.groupsfirst);
     
-
+    this.groupbooks = this.splitIntoGroupsofBooks(this.books);
+    console.log(this.groupbooks);
+    
   }
 
-  splitIntoGroups(images: string[]): GroupImgs[] {
+  splitIntoGroupsofImages(images: string[]):  GroupImgs[] | any{
     const groups: GroupImgs[] = [];
   
     for (let i = 0; i < images.length; i += 4) {
@@ -68,6 +70,16 @@ export class ListCarouselComponent implements OnInit{
     return groups;
   }
   
+  splitIntoGroupsofBooks(books: string[]):  GroupBooks[] | any{
+    const groups: GroupBooks[] = [];
+  
+    for (let i = 0; i < books.length; i += 4) {
+      const groupbooks = books.slice(i, i + 5);
+      groups.push({ books: groupbooks });
+    }
+  
+    return groups;
+  }
   clicked()
   {
     let elements = document.getElementsByClassName("carousel-item") ;

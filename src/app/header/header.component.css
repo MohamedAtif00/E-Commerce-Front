@@ -7,3 +7,7 @@
 .box-light:hover{
     border:1px solid white;
 }
+
+#main-menu{
+    transition:transform 0.4s ease;
+}

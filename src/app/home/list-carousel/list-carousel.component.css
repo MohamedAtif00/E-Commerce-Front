@@ -1,3 +1,6 @@
+*{
+  box-sizing:border-box;
+}
 .carousel-control-next:hover{
   background-color:rgba(255,255,255,0.4);
 }
@@ -35,4 +38,14 @@
   margin-right:10px;
   transition:transform 1s ease;
   overflow:hidden;
+}
+
+.thecontainer{
+  width:290px
+}
+.box{
+  height: 170px;
+  width: 100%;
+  background-color: #f7f7f7;
+  padding:5px
 }
