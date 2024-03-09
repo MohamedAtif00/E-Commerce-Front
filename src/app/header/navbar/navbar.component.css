@@ -10,3 +10,9 @@
     color:white;
     border-bottom:2px solid green;
 }
+.navbar-brand:hover{
+    color:white
+}
+.navbar-brand{
+    color:white
+}
