@@ -7,6 +7,7 @@ import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } fr
 })
 export class HeaderComponent implements AfterViewInit,OnDestroy {
 
+  seeallActive:boolean = false;
 
   @ViewChild('canvas', { static: true }) canvas!: ElementRef;
 
@@ -53,6 +54,21 @@ export class HeaderComponent implements AfterViewInit,OnDestroy {
   {
     let menu = document.getElementById('main-menu') as HTMLElement;
     menu.style.transform = 'translatex(-50%)'
+  }
+
+  seeall()
+  {
+    this.seeallActive = !this.seeallActive
+    let seeall = document.getElementById('seeall') as HTMLElement;
+    let updownarrow = document.getElementById('updownarrow') as HTMLImageElement;
+    if(this.seeallActive)
+    {
+      seeall.style.transform = 'translateY(0%)';
+      updownarrow.src =  '../../assets/chevron_up_96px.png';
+    }else{
+      seeall.style.transform = 'translateY(-84%)';
+      updownarrow.src =  '../../assets/chevron_down_96px.png';
+    }
   }
 
   countArray(n:number)

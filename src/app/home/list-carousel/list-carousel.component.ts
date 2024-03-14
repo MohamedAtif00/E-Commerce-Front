@@ -44,7 +44,10 @@ export class ListCarouselComponent implements OnInit{
     'https://m.media-amazon.com/images/I/51BGYkauCXL._AC_SY200_.jpg',
     'https://m.media-amazon.com/images/I/412w3Q+sS+L._AC_SY200_.jpg',
     'https://m.media-amazon.com/images/I/51MlsPdl6dL._AC_SY200_.jpg',
-    'https://m.media-amazon.com/images/I/515Mh-4qzGL._AC_SY200_.jpg'
+    'https://m.media-amazon.com/images/I/515Mh-4qzGL._AC_SY200_.jpg',
+    'https://m.media-amazon.com/images/I/41yi4TVWREL._AC_SY200_.jpg',
+    'https://m.media-amazon.com/images/I/41sKk71L1-L._AC_SY200_.jpg',
+    'https://m.media-amazon.com/images/I/51BGYkauCXL._AC_SY200_.jpg',
   ]
 
 

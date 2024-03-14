@@ -7,7 +7,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'productlist',component:ProductListComponent},
-  {path:'productdetails',component:ProductDetailsComponent}
+  {path:'productdetails',component:ProductDetailsComponent},
+  {path:'register',loadChildren:()=> import('./authentication/authentication.module').then(x => x.AuthenticationModule)}
 ];
 
 @NgModule({
